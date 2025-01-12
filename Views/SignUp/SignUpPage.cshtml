@@ -1,0 +1,50 @@
+﻿@model HoneyBank.Models.SignUpViewModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<h2>Sign Up</h2>
+
+<form asp-controller="SignUp" asp-action="SignUpUser" method="post">
+    <!-- Username -->
+    <div>
+        <label for="Username">Username:</label>
+        <input asp-for="Username" id="Username" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <!-- Password -->
+    <div>
+        <label for="Password">Password:</label>
+        <input asp-for="Password" id="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <!-- Name -->
+    <div>
+        <label for="Name">Name:</label>
+        <input asp-for="Name" id="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!-- Email -->
+    <div>
+        <label for="Email">Email:</label>
+        <input asp-for="Email" id="Email" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <!-- Address -->
+    <div>
+        <label for="Address">Address:</label>
+        <textarea asp-for="Address" id="Address"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,29 @@
+﻿@model HoneyBank.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+
+<form asp-controller="Login" asp-action="LoginUser" method="post">
+    <!-- Username -->
+    <div>
+        <label for="Username">Username:</label>
+        <input asp-for="Username" id="Username" name ="Username"/>
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <!-- Password -->
+    <div>
+        <label for="Password">Password:</label>
+        <input asp-for="Password" id="Password" type="password" name="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+}

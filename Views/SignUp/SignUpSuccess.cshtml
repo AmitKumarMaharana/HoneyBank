@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = ViewData["SuccessTitle"] ?? "Sign Up Successful";
+}
+
+<h2>@ViewData["SuccessTitle"]</h2>
+<p>@ViewData["SuccessMessage"]</p>
+
+@if (ViewData["SuccessContext"]?.ToString() == "Login")
+{
+    <a asp-controller="Home" asp-action="Index">Go to Home Page</a>
+}
+else
+{
+    <a asp-controller="Login" asp-action="LoginPage">Go to Login Page</a>
+}
